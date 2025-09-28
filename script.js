@@ -34,28 +34,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const openModalButtons = document.querySelectorAll(".js-open-modal");
   const closeModalButton = document.getElementById("close-modal-button");
   const modalOverlay = document.getElementById("modal-overlay");
-
-  // NEW: Get modal form and success message elements
   const modalForm = document.getElementById("modal-form");
   const modalSuccess = document.getElementById("modal-success");
 
   const openModal = (event) => {
     event.preventDefault();
-    // NEW: Ensure form is visible and success is hidden when opening
     modalForm.classList.remove("is-hidden");
     modalSuccess.classList.add("is-hidden");
     modalOverlay.classList.add("visible");
   };
-
   const closeModal = () => {
     modalOverlay.classList.remove("visible");
   };
-
-  // Attach event listeners
   openModalButtons.forEach((button) => {
     button.addEventListener("click", openModal);
   });
-
   if (closeModalButton && modalOverlay) {
     closeModalButton.addEventListener("click", closeModal);
     modalOverlay.addEventListener("click", (event) => {
@@ -66,13 +59,51 @@ document.addEventListener("DOMContentLoaded", () => {
         closeModal();
     });
   }
-
-  // NEW: Handle form submission
   if (modalForm) {
     modalForm.addEventListener("submit", (event) => {
-      event.preventDefault(); // Stop the form from reloading the page
+      event.preventDefault();
       modalForm.classList.add("is-hidden");
       modalSuccess.classList.remove("is-hidden");
     });
   }
+
+  // --- 4. NEW: Smooth Scrolling for ALL Anchor Links ---
+  const allAnchorLinks = document.querySelectorAll('a[href^="#"]');
+  allAnchorLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      // Check if the link is NOT a modal trigger
+      if (!this.classList.contains("js-open-modal")) {
+        e.preventDefault();
+        const targetId = this.getAttribute("href");
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    });
+  });
+
+  // --- 5. NEW: Active Navigation Highlighting on Scroll ---
+  const sections = document.querySelectorAll("main section[id]");
+  const navLinks = document.querySelectorAll(".nav-links a");
+
+  const navObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navLinks.forEach((link) => {
+            link.classList.remove("active");
+            if (link.getAttribute("href").substring(1) === entry.target.id) {
+              link.classList.add("active");
+            }
+          });
+        }
+      });
+    },
+    { rootMargin: "-50% 0px -50% 0px" },
+  ); // Activates when the section is in the middle of the screen
+
+  sections.forEach((section) => {
+    navObserver.observe(section);
+  });
 });
