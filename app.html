@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Your Dashboard - MindBalance</title>
+        <link rel="stylesheet" href="app.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@600&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <div class="app-container">
+            <!-- ===== SIDEBAR NAVIGATION ===== -->
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <a href="index.html" class="logo">MindBalance</a>
+                </div>
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li class="active">
+                            <a href="#">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                >
+                                    <path
+                                        d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z"
+                                    />
+                                    <path
+                                        d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z"
+                                    />
+                                </svg>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                >
+                                    <path
+                                        d="M10.5 4.5a7.5 7.5 0 100 15 7.5 7.5 0 000-15zM2.25 12a9.75 9.75 0 0115.64-7.443 9.75 9.75 0 01-5.635 16.886A9.75 9.75 0 012.25 12z"
+                                    />
+                                    <path
+                                        d="M12.252 8.355a.75.75 0 011.238.905l-3.425 6.09a.75.75 0 01-1.238-.905l3.425-6.09zM15.42 13.06a.75.75 0 01.67 1.34l-6.09 3.425a.75.75 0 01-.67-1.34l6.09-3.425zM8.355 12.252a.75.75 0 01.905-1.238l6.09 3.425a.75.75 0 01-.905 1.238l-6.09-3.425z"
+                                    />
+                                </svg>
+                                <span>Library</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M2.25 13.5a8.25 8.25 0 018.25-8.25.75.75 0 01.75.75v6.75H18a.75.75 0 01.75.75 8.25 8.25 0 01-16.5 0z"
+                                        clip-rule="evenodd"
+                                    />
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M12.75 3a.75.75 0 01.75-.75 8.25 8.25 0 018.25 8.25.75.75 0 01-.75.75h-7.5a.75.75 0 01-.75-.75V3z"
+                                        clip-rule="evenodd"
+                                    />
+                                </svg>
+                                <span>Progress</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- ===== MAIN APP CONTENT ===== -->
+            <main class="main-content">
+                <div class="main-header">
+                    <h1>Good morning, Alex</h1>
+                    <p>Ready to start your day with intention?</p>
+                </div>
+
+                <!-- DAILY CHECK-IN CARD (THE PRIMARY ACTION) -->
+                <div class="card check-in-card">
+                    <div class="card-content">
+                        <h2>How are you feeling today?</h2>
+                        <p>
+                            Take a moment to check in with yourself. It only
+                            takes a minute.
+                        </p>
+                    </div>
+                    <a href="#" class="card-button" id="start-check-in-button"
+                        >Start Check-in &rarr;</a
+                    >
+                </div>
+
+                <!-- RECOMMENDED CONTENT SECTION -->
+                <div class="content-section">
+                    <div class="section-header">
+                        <h3>Recommended For You</h3>
+                        <a href="#" class="view-all-link">View all</a>
+                    </div>
+                    <div class="content-grid">
+                        <div class="content-card">
+                            <div class="card-image-placeholder"></div>
+                            <h4>5-Minute Breathing Exercise</h4>
+                            <span>5 min &bull; Meditation</span>
+                        </div>
+                        <div class="content-card">
+                            <div class="card-image-placeholder"></div>
+                            <h4>Overcoming Procrastination</h4>
+                            <span>8 min &bull; Article</span>
+                        </div>
+                        <div class="content-card">
+                            <div class="card-image-placeholder"></div>
+                            <h4>Mindful Walking Session</h4>
+                            <span>15 min &bull; Exercise</span>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- ===== DAILY CHECK-IN OVERLAY ===== -->
+        <div class="check-in-overlay" id="check-in-overlay">
+            <button class="close-button" id="close-check-in">&times;</button>
+            <div class="check-in-flow">
+                <!-- STEP 1: MOOD SELECTION -->
+                <div class="check-in-step active" data-step="1">
+                    <h2>How are you feeling right now?</h2>
+                    <div class="mood-selector">
+                        <div class="mood-option" data-mood="Happy">
+                            😊<span>Happy</span>
+                        </div>
+                        <div class="mood-option" data-mood="Good">
+                            🙂<span>Good</span>
+                        </div>
+                        <div class="mood-option" data-mood="Okay">
+                            😐<span>Okay</span>
+                        </div>
+                        <div class="mood-option" data-mood="Sad">
+                            😟<span>Sad</span>
+                        </div>
+                        <div class="mood-option" data-mood="Anxious">
+                            😥<span>Anxious</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 2: JOURNALING -->
+                <div class="check-in-step" data-step="2">
+                    <h2>Care to share a few thoughts?</h2>
+                    <p>
+                        Writing can help clarify your feelings. This is a
+                        private space, just for you.
+                    </p>
+                    <textarea
+                        placeholder="Today was interesting because..."
+                    ></textarea>
+                    <div class="step-buttons">
+                        <button class="secondary-button" data-action="skip">
+                            Skip for now
+                        </button>
+                        <button class="primary-button" data-action="finish">
+                            Finish Check-in
+                        </button>
+                    </div>
+                </div>
+
+                <!-- STEP 3: COMPLETION -->
+                <div class="check-in-step" data-step="3">
+                    <div class="completion-icon">✓</div>
+                    <h2>Check-in Complete</h2>
+                    <p>
+                        Well done for taking a moment for yourself today. Your
+                        thoughts are saved.
+                    </p>
+                    <button class="primary-button" data-action="close">
+                        Back to Dashboard
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script src="app.js"></script>
+    </body>
+</html>

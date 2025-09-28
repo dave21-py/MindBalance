@@ -1,0 +1,381 @@
+/* ---
+MindBalance Application Styles
+--- */
+
+/* --- 1. Global Styles & Root Variables --- */
+:root {
+    --app-background: #f8f7f4;
+    --sidebar-background: #ffffff;
+    --surface-color: #ffffff;
+    --text-color: #1a1a1a;
+    --text-secondary-color: #7a7a7a;
+    --accent-color: #d95757;
+    --border-color: #e5e2de;
+    --shadow-color: rgba(0, 0, 0, 0.05);
+
+    --font-heading: "Playfair Display", serif;
+    --font-body:
+        "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        sans-serif;
+
+    --border-radius-lg: 16px;
+    --border-radius-md: 10px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--app-background);
+    color: var(--text-color);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- 2. Main App Layout --- */
+.app-container {
+    display: grid;
+    grid-template-columns: 240px 1fr; /* Sidebar width and main content */
+    min-height: 100vh;
+}
+
+/* --- 3. Sidebar Navigation --- */
+.sidebar {
+    background: var(--sidebar-background);
+    border-right: 1px solid var(--border-color);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+.sidebar-header .logo {
+    font-size: 1.75rem;
+    font-family: var(--font-heading);
+    color: var(--text-color);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 3rem;
+}
+.sidebar-nav ul {
+    list-style: none;
+}
+.sidebar-nav li a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 1rem;
+    border-radius: var(--border-radius-md);
+    text-decoration: none;
+    color: var(--text-secondary-color);
+    font-weight: 500;
+    transition:
+        background-color 0.3s,
+        color 0.3s;
+}
+.sidebar-nav li a svg {
+    width: 24px;
+    height: 24px;
+}
+.sidebar-nav li.active a,
+.sidebar-nav li a:hover {
+    background-color: var(--app-background);
+    color: var(--text-color);
+}
+
+/* --- 4. Main Content Area --- */
+.main-content {
+    padding: 4rem 5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.main-header {
+    margin-bottom: 3rem;
+}
+.main-header h1 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+.main-header p {
+    color: var(--text-secondary-color);
+    font-size: 1.1rem;
+}
+
+/* --- 5. Cards --- */
+.card {
+    background: var(--surface-color);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+.check-in-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5rem;
+    margin-bottom: 4rem;
+}
+.check-in-card h2 {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+.check-in-card p {
+    color: var(--text-secondary-color);
+    max-width: 350px;
+}
+.card-button {
+    background: var(--text-color);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: var(--border-radius-md);
+    text-decoration: none;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: transform 0.3s ease;
+}
+.card-button:hover {
+    transform: scale(1.05);
+}
+
+/* --- 6. Content Section & Grid --- */
+.content-section .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+.content-section h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+}
+.view-all-link {
+    color: var(--text-secondary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+.content-card {
+    background: var(--surface-color);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--border-color);
+    overflow: hidden; /* Important for border radius on image */
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+}
+.content-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px var(--shadow-color);
+}
+.card-image-placeholder {
+    height: 150px;
+    background-color: #e0e0e0;
+}
+.content-card h4 {
+    font-family: var(--font-body);
+    font-weight: 700;
+    padding: 1rem 1rem 0.25rem 1rem;
+}
+.content-card span {
+    display: block;
+    padding: 0 1rem 1rem 1rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary-color);
+}
+
+/* --- 7. Responsive --- */
+@media (max-width: 1200px) {
+    .main-content {
+        padding: 3rem 4rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .app-container {
+        grid-template-columns: 1fr; /* Stack sidebar and main content */
+    }
+    .sidebar {
+        grid-row: 2; /* Move sidebar to the bottom on mobile */
+        flex-direction: row;
+        justify-content: center;
+        padding: 0.5rem;
+        border-top: 1px solid var(--border-color);
+        border-right: none;
+        height: 60px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    .sidebar-header {
+        display: none;
+    }
+    .sidebar-nav ul {
+        display: flex;
+        gap: 0.5rem;
+    }
+    .sidebar-nav li a {
+        flex-direction: column;
+        gap: 5px;
+        padding: 0.5rem 1rem;
+    }
+    .sidebar-nav li a span {
+        font-size: 0.7rem;
+    }
+    .main-content {
+        padding: 2rem;
+        padding-bottom: 80px; /* Add padding to avoid overlap with bottom bar */
+    }
+}
+/* --- 8. Daily Check-in Overlay --- */
+.check-in-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--app-background);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Hidden by default */
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition:
+        opacity 0.4s ease,
+        visibility 0.4s ease,
+        transform 0.4s ease;
+}
+
+.check-in-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.close-button {
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    background: none;
+    border: none;
+    font-size: 3rem;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.close-button:hover {
+    color: #888;
+}
+
+.check-in-flow {
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+}
+
+.check-in-step {
+    display: none; /* Hide all steps by default */
+}
+.check-in-step.active {
+    display: block; /* Show only the active step */
+}
+
+.check-in-step h2 {
+    font-family: var(--font-heading);
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+}
+.check-in-step p {
+    color: var(--text-secondary-color);
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+}
+
+/* Step 1: Mood Selector Styles */
+.mood-selector {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+.mood-option {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 4rem;
+    transition: transform 0.3s ease;
+}
+.mood-option:hover {
+    transform: scale(1.1);
+}
+.mood-option span {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-secondary-color);
+}
+
+/* Step 2: Journaling Styles */
+.check-in-step textarea {
+    width: 100%;
+    height: 150px;
+    padding: 1rem;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    background: var(--surface-color);
+    resize: none;
+    margin-bottom: 2rem;
+}
+.step-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.primary-button,
+.secondary-button {
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.primary-button {
+    background: var(--text-color);
+    color: #fff;
+}
+.secondary-button {
+    background: #e9e9e9;
+    color: var(--text-secondary-color);
+}
+.primary-button:hover,
+.secondary-button:hover {
+    transform: translateY(-2px);
+}
+
+/* Step 3: Completion Styles */
+.completion-icon {
+    font-size: 3rem;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    background: #28a745;
+    color: #fff;
+    margin: 0 auto 2rem auto;
+}
