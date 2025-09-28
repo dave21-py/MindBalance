@@ -22,7 +22,7 @@
                 <nav class="sidebar-nav">
                     <ul>
                         <li class="active">
-                            <a href="#">
+                            <a href="#" data-page="dashboard-page">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 24 24"
@@ -39,7 +39,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="#" data-page="library-page">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 24 24"
@@ -56,7 +56,8 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <!-- Corrected link for Progress -->
+                            <a href="#" data-page="progress-page">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 24 24"
@@ -82,46 +83,219 @@
 
             <!-- ===== MAIN APP CONTENT ===== -->
             <main class="main-content">
-                <div class="main-header">
-                    <h1>Good morning, Alex</h1>
-                    <p>Ready to start your day with intention?</p>
+                <!-- DASHBOARD PAGE -->
+                <div class="page" id="dashboard-page">
+                    <div class="main-header">
+                        <h1>Good morning, Alex</h1>
+                        <p>Ready to start your day with intention?</p>
+                    </div>
+                    <div class="card check-in-card">
+                        <div class="card-content">
+                            <h2>How are you feeling today?</h2>
+                            <p>
+                                Take a moment to check in with yourself. It only
+                                takes a minute.
+                            </p>
+                        </div>
+                        <a
+                            href="#"
+                            class="card-button"
+                            id="start-check-in-button"
+                            >Start Check-in &rarr;</a
+                        >
+                    </div>
+                    <div class="content-section">
+                        <div class="section-header">
+                            <h3>Recommended For You</h3>
+                            <a
+                                href="#"
+                                class="view-all-link"
+                                data-page="library-page"
+                                >View all</a
+                            >
+                        </div>
+                        <div class="content-grid">
+                            <div class="content-card">
+                                <div class="card-image-placeholder"></div>
+                                <h4>5-Minute Breathing Exercise</h4>
+                                <span>5 min &bull; Meditation</span>
+                            </div>
+                            <div class="content-card">
+                                <div class="card-image-placeholder"></div>
+                                <h4>Overcoming Procrastination</h4>
+                                <span>8 min &bull; Article</span>
+                            </div>
+                            <div class="content-card">
+                                <div class="card-image-placeholder"></div>
+                                <h4>Mindful Walking Session</h4>
+                                <span>15 min &bull; Exercise</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- DAILY CHECK-IN CARD (THE PRIMARY ACTION) -->
-                <div class="card check-in-card">
-                    <div class="card-content">
-                        <h2>How are you feeling today?</h2>
+                <!-- LIBRARY PAGE (HIDDEN BY DEFAULT) -->
+                <div class="page is-hidden" id="library-page">
+                    <div class="main-header">
+                        <h1>Content Library</h1>
                         <p>
-                            Take a moment to check in with yourself. It only
-                            takes a minute.
+                            Explore resources to help you on your wellness
+                            journey.
                         </p>
                     </div>
-                    <a href="#" class="card-button" id="start-check-in-button"
-                        >Start Check-in &rarr;</a
-                    >
-                </div>
-
-                <!-- RECOMMENDED CONTENT SECTION -->
-                <div class="content-section">
-                    <div class="section-header">
-                        <h3>Recommended For You</h3>
-                        <a href="#" class="view-all-link">View all</a>
+                    <div class="filter-bar">
+                        <button class="filter-button active" data-filter="all">
+                            All
+                        </button>
+                        <button class="filter-button" data-filter="Meditation">
+                            Meditations
+                        </button>
+                        <button class="filter-button" data-filter="Article">
+                            Articles
+                        </button>
+                        <button class="filter-button" data-filter="Exercise">
+                            Exercises
+                        </button>
                     </div>
-                    <div class="content-grid">
-                        <div class="content-card">
+                    <div class="content-grid full-grid">
+                        <div class="content-card" data-category="Meditation">
                             <div class="card-image-placeholder"></div>
                             <h4>5-Minute Breathing Exercise</h4>
                             <span>5 min &bull; Meditation</span>
                         </div>
-                        <div class="content-card">
+                        <div class="content-card" data-category="Article">
                             <div class="card-image-placeholder"></div>
                             <h4>Overcoming Procrastination</h4>
                             <span>8 min &bull; Article</span>
                         </div>
-                        <div class="content-card">
+                        <div class="content-card" data-category="Exercise">
                             <div class="card-image-placeholder"></div>
                             <h4>Mindful Walking Session</h4>
                             <span>15 min &bull; Exercise</span>
+                        </div>
+                        <div class="content-card" data-category="Meditation">
+                            <div class="card-image-placeholder"></div>
+                            <h4>Morning Gratitude</h4>
+                            <span>7 min &bull; Meditation</span>
+                        </div>
+                        <div class="content-card" data-category="Article">
+                            <div class="card-image-placeholder"></div>
+                            <h4>The Science of Sleep</h4>
+                            <span>12 min &bull; Article</span>
+                        </div>
+                        <div class="content-card" data-category="Exercise">
+                            <div class="card-image-placeholder"></div>
+                            <h4>Gentle Morning Stretches</h4>
+                            <span>10 min &bull; Exercise</span>
+                        </div>
+                        <div class="content-card" data-category="Meditation">
+                            <div class="card-image-placeholder"></div>
+                            <h4>Focus and Concentration</h4>
+                            <span>10 min &bull; Meditation</span>
+                        </div>
+                        <div class="content-card" data-category="Article">
+                            <div class="card-image-placeholder"></div>
+                            <h4>Building Healthy Habits</h4>
+                            <span>9 min &bull; Article</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROGRESS PAGE (HIDDEN BY DEFAULT) -->
+                <div class="page is-hidden" id="progress-page">
+                    <div class="main-header">
+                        <h1>Your Progress</h1>
+                        <p>
+                            Review your journey and celebrate your consistency.
+                        </p>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h4>Current Streak</h4>
+                            <p>🔥 5 Days</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4>Check-ins this Month</h4>
+                            <p>✅ 12</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4>Journal Entries</h4>
+                            <p>✍️ 8</p>
+                        </div>
+                    </div>
+                    <div class="history-section">
+                        <h3>Mood History (Last 7 Days)</h3>
+                        <div class="chart-container">
+                            <div class="chart-day">
+                                <div
+                                    class="chart-bar happy"
+                                    style="height: 90%"
+                                ></div>
+                                <span>Mon</span>
+                            </div>
+                            <div class="chart-day">
+                                <div
+                                    class="chart-bar good"
+                                    style="height: 70%"
+                                ></div>
+                                <span>Tue</span>
+                            </div>
+                            <div class="chart-day">
+                                <div
+                                    class="chart-bar okay"
+                                    style="height: 50%"
+                                ></div>
+                                <span>Wed</span>
+                            </div>
+                            <div class="chart-day">
+                                <div
+                                    class="chart-bar anxious"
+                                    style="height: 40%"
+                                ></div>
+                                <span>Thu</span>
+                            </div>
+                            <div class="chart-day">
+                                <div
+                                    class="chart-bar good"
+                                    style="height: 75%"
+                                ></div>
+                                <span>Fri</span>
+                            </div>
+                            <div class="chart-day">
+                                <div
+                                    class="chart-bar happy"
+                                    style="height: 100%"
+                                ></div>
+                                <span>Sat</span>
+                            </div>
+                            <div class="chart-day">
+                                <div
+                                    class="chart-bar good"
+                                    style="height: 80%"
+                                ></div>
+                                <span>Sun</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="history-section">
+                        <h3>Recent Journal Entries</h3>
+                        <div class="entry-list">
+                            <div class="entry-item">
+                                <span class="entry-date">Yesterday</span>
+                                <p class="entry-text">
+                                    Felt pretty good today after getting a good
+                                    night's sleep. The breathing exercise really
+                                    helped before my big presentation...
+                                </p>
+                            </div>
+                            <div class="entry-item">
+                                <span class="entry-date">3 days ago</span>
+                                <p class="entry-text">
+                                    Was feeling a bit anxious about the upcoming
+                                    exams. Wrote down a plan which made me feel
+                                    more in control...
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -132,7 +306,6 @@
         <div class="check-in-overlay" id="check-in-overlay">
             <button class="close-button" id="close-check-in">&times;</button>
             <div class="check-in-flow">
-                <!-- STEP 1: MOOD SELECTION -->
                 <div class="check-in-step active" data-step="1">
                     <h2>How are you feeling right now?</h2>
                     <div class="mood-selector">
@@ -153,8 +326,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- STEP 2: JOURNALING -->
                 <div class="check-in-step" data-step="2">
                     <h2>Care to share a few thoughts?</h2>
                     <p>
@@ -173,8 +344,6 @@
                         </button>
                     </div>
                 </div>
-
-                <!-- STEP 3: COMPLETION -->
                 <div class="check-in-step" data-step="3">
                     <div class="completion-icon">✓</div>
                     <h2>Check-in Complete</h2>

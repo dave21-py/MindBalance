@@ -1,5 +1,36 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Get all the necessary elements from the DOM
+  // --- 1. PAGE NAVIGATION ---
+  const navLinks = document.querySelectorAll(".sidebar-nav a");
+  const pages = document.querySelectorAll(".page");
+  const sidebarLinks = document.querySelectorAll(".sidebar-nav li");
+
+  const showPage = (pageId) => {
+    pages.forEach((page) => {
+      if (page.id === pageId) {
+        page.classList.remove("is-hidden");
+      } else {
+        page.classList.add("is-hidden");
+      }
+    });
+  };
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const pageId = link.getAttribute("data-page");
+
+      if (pageId) {
+        // Handle page switching
+        showPage(pageId);
+
+        // Handle active state in sidebar
+        sidebarLinks.forEach((li) => li.classList.remove("active"));
+        link.parentElement.classList.add("active");
+      }
+    });
+  });
+
+  // --- 2. CHECK-IN MODAL LOGIC ---
   const startButton = document.getElementById("start-check-in-button");
   const checkinOverlay = document.getElementById("check-in-overlay");
   const closeButton = document.getElementById("close-check-in");
@@ -8,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const moodOptions = document.querySelectorAll(".mood-option");
   const actionButtons = document.querySelectorAll("[data-action]");
 
-  // Function to navigate between steps
   const goToStep = (stepNumber) => {
     steps.forEach((step) => {
       if (step.getAttribute("data-step") === stepNumber.toString()) {
@@ -18,50 +48,61 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   };
-
-  // Function to open the check-in flow
   const openCheckin = () => {
     checkinOverlay.classList.add("visible");
-    goToStep(1); // Always start at step 1
+    goToStep(1);
   };
-
-  // Function to close the check-in flow
   const closeCheckin = () => {
     checkinOverlay.classList.remove("visible");
   };
-
-  // --- EVENT LISTENERS ---
-
-  // Listen for click on the main "Start Check-in" button
   if (startButton) {
     startButton.addEventListener("click", (e) => {
       e.preventDefault();
       openCheckin();
     });
   }
-
-  // Listen for clicks on any of the mood options
   moodOptions.forEach((option) => {
     option.addEventListener("click", () => {
-      // When a mood is selected, go to the next step
       goToStep(2);
     });
   });
-
-  // Listen for clicks on the action buttons (Skip, Finish, Close)
   actionButtons.forEach((button) => {
     button.addEventListener("click", () => {
       const action = button.getAttribute("data-action");
       if (action === "finish" || action === "skip") {
-        goToStep(3); // Go to completion step
+        goToStep(3);
       } else if (action === "close") {
         closeCheckin();
       }
     });
   });
-
-  // Listen for click on the main close button (the 'X')
   if (closeButton) {
     closeButton.addEventListener("click", closeCheckin);
   }
+
+  // --- 3. LIBRARY FILTERING LOGIC ---
+  const filterButtons = document.querySelectorAll(".filter-button");
+  const contentCards = document.querySelectorAll(
+    ".content-card[data-category]",
+  );
+
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      // Set active state on buttons
+      filterButtons.forEach((btn) => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      const filter = button.getAttribute("data-filter");
+
+      // Show/hide content cards based on filter
+      contentCards.forEach((card) => {
+        const category = card.getAttribute("data-category");
+        if (filter === "all" || filter === category) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  });
 });
