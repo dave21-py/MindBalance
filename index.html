@@ -3,12 +3,12 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>MindBalance - Your Pocket Mental Wellness Companion</title>
+        <title>MindBalance - A Calmer Approach to Student Wellness</title>
         <link rel="stylesheet" href="style.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@600&display=swap"
             rel="stylesheet"
         />
     </head>
@@ -17,104 +17,171 @@
             <div class="container">
                 <nav class="site-nav">
                     <a href="#" class="logo">MindBalance</a>
-                    <ul>
+                    <ul class="nav-links">
                         <li><a href="#features">Features</a></li>
+                        <li><a href="#values">Our Philosophy</a></li>
                         <li><a href="#about">About</a></li>
-                        <li><a href="#">Sign Up</a></li>
                     </ul>
+                    <a href="#" class="nav-button">Get Early Access</a>
                 </nav>
             </div>
         </header>
 
         <main>
+            <!-- HERO SECTION -->
             <section class="hero">
                 <div class="container hero-content">
-                    <h1>Find your calm in the chaos of student life.</h1>
-                    <p class="subtitle">
-                        MindBalance is a proactive mental wellness app designed
-                        to help you build resilience and thrive.
+                    <h1 class="hero-animate">
+                        A space to find
+                        <br />
+                        your <span class="accent-color">balance</span>
+                    </h1>
+                    <p class="subtitle hero-animate">
+                        MindBalance is your proactive daily companion for
+                        navigating the pressures of student life. Build
+                        resilience, find focus, and prioritize your well-being.
                     </p>
-                    <a href="#" class="cta-button">Get Early Access</a>
+                    <div class="hero-buttons hero-animate">
+                        <a href="#" class="cta-button"
+                            >Join the Waitlist &rarr;</a
+                        >
+                        <a href="#" class="secondary-button"
+                            >&#x2764; Learn More</a
+                        >
+                    </div>
+                </div>
+
+                <div class="hero-preview-bar-wrapper hero-animate">
+                    <div class="hero-preview-bar">
+                        <div class="app-info">
+                            <strong>MindBalance</strong>
+                            <span class="version-tag">Coming Soon</span>
+                        </div>
+                        <div class="bar-links">
+                            <a href="#">&#x2753; FAQs</a>
+                            <a href="#" class="download-link"
+                                >Get App Updates</a
+                            >
+                        </div>
+                    </div>
                 </div>
             </section>
 
+            <!-- FEATURES SECTION -->
             <section id="features" class="features-section">
-                <div class="container">
-                    <h2>Proactive Support, Personalized For You</h2>
-                    <div class="features-grid">
-                        <div class="feature-card">
-                            <img
-                                src="https://via.placeholder.com/80"
-                                alt="Icon for Daily Check-in"
-                            />
-                            <h3>Daily Check-in</h3>
-                            <p>
-                                Start your day with intention. A quick and easy
-                                way to gauge your mood and set a positive tone.
-                            </p>
-                        </div>
-                        <div class="feature-card">
-                            <img
-                                src="https://via.placeholder.com/80"
-                                alt="Icon for Personalized Content"
-                            />
-                            <h3>Personalized Content</h3>
-                            <p>
-                                Receive articles, meditations, and exercises
-                                tailored to your needs and goals.
-                            </p>
-                        </div>
-                        <div class="feature-card">
-                            <img
-                                src="https://via.placeholder.com/80"
-                                alt="Icon for Resilience Building"
-                            />
-                            <h3>Build Resilience</h3>
-                            <p>
-                                Develop coping mechanisms and mental fortitude
-                                with guided tools and techniques.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="about" class="about-section">
-                <div class="container about-content">
-                    <div class="about-text">
-                        <h2>Built on a Foundation of Calm</h2>
-                        <p>
-                            We believe technology should be a tool for
-                            well-being, not a source of stress. Our design
-                            philosophy is centered around creating a serene,
-                            intuitive, and decluttered space for you to focus on
-                            what matters most: your mental health.
+                <div class="container features-content">
+                    <div class="features-text">
+                        <h2>Wellness, personalized for you.</h2>
+                        <p class="section-subtitle">
+                            MindBalance is designed to be an intuitive tool, not
+                            another distraction. Access powerful features that
+                            help you understand your patterns and build
+                            healthier habits.
                         </p>
+
+                        <div class="feature-item">
+                            <h3>Daily Check-ins</h3>
+                            <p>
+                                A simple, powerful way to start your day with
+                                intention. Track your mood over time and gain
+                                valuable insights into your mental state.
+                            </p>
+                        </div>
+                        <div class="feature-item">
+                            <h3>Guided Sessions</h3>
+                            <p>
+                                Access a library of meditations, breathing
+                                exercises, and focus sessions designed to help
+                                you de-stress and recenter, anytime, anywhere.
+                            </p>
+                        </div>
+                        <div class="feature-item">
+                            <h3>Personalized Insights</h3>
+                            <p>
+                                Our smart insights help you connect the dots
+                                between your habits and your mood, empowering
+                                you to make positive changes.
+                            </p>
+                        </div>
                     </div>
-                    <div class="about-image">
-                        <img
-                            src="https://via.placeholder.com/400x300"
-                            alt="A calming abstract image representing the app's interface"
-                        />
+                    <div class="features-visual">
+                        <div class="visual-card">
+                            <img
+                                src="https://via.placeholder.com/600x450/e0e0e0/e0e0e0"
+                                alt="A visual representation of the MindBalance app interface"
+                            />
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <section class="cta-section">
+            <!-- VALUES SECTION -->
+            <section id="values" class="values-section">
                 <div class="container">
-                    <h2>Ready to find your balance?</h2>
-                    <p>
-                        Join the waitlist to be the first to know when
-                        MindBalance launches.
+                    <h2>Our Philosophy</h2>
+                    <p class="section-subtitle">
+                        We believe that the best technology enhances your life
+                        without demanding your attention. Our approach is guided
+                        by three core principles.
                     </p>
-                    <a href="#" class="cta-button">Join Now</a>
+                    <div class="values-grid">
+                        <div class="value-item">
+                            <span class="icon">&#x2713;</span> Proactive, Not
+                            Reactive
+                        </div>
+                        <div class="value-item">
+                            <span class="icon">&#x2713;</span> Absolutely
+                            Private
+                        </div>
+                        <div class="value-item">
+                            <span class="icon">&#x2713;</span> Beautifully
+                            Simple by Design
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
 
-        <footer class="site-footer">
-            <div class="container">
-                <p>&copy; 2025 MindBalance. All Rights Reserved.</p>
+        <!-- FOOTER -->
+        <footer class="site-footer" id="about">
+            <div class="container footer-content">
+                <div class="footer-branding">
+                    <h3>MindBalance</h3>
+                    <p>
+                        A proactive mental wellness companion for students. Find
+                        your focus, build resilience, and thrive.
+                    </p>
+                    <a href="#" class="cta-button">Get Early Access &rarr;</a>
+                </div>
+                <div class="footer-links">
+                    <div class="link-column">
+                        <h4>Community</h4>
+                        <ul>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Discord</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#">Support Center</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container footer-bottom">
+                <p>Made with &#x2764; by the MindBalance Team</p>
             </div>
         </footer>
 
