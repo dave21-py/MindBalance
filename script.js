@@ -1,11 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // --- 1. Robust Hero Animation on Page Load ---
-  // Select all the elements in the hero section that need to animate
+  // --- 1. Hero Animation on Page Load ---
   const heroElements = document.querySelectorAll(".hero-animate");
-
-  // Loop through each element and apply the 'visible' class with a staggered delay
   heroElements.forEach((el, index) => {
-    // The delay is index * 100ms. So the first is 100ms, second is 200ms, etc.
     setTimeout(
       () => {
         el.classList.add("visible");
@@ -14,29 +10,69 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   });
 
-  // --- 2. Scroll-Reveal Animation for Sections Below the Fold ---
-  const observer = new IntersectionObserver(
+  // --- 2. Scroll-Reveal Animation for All Other Sections ---
+  const scrollObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
+          scrollObserver.unobserve(entry.target);
         }
       });
     },
-    {
-      threshold: 0.1, // Animate when 10% of the element is visible
-    },
+    { threshold: 0.1 },
   );
 
-  // We select EVERYTHING EXCEPT the hero elements, which are now handled by the load animation.
-  const elementsToAnimateOnScroll = document.querySelectorAll(
-    ".features-text h2, .features-text .section-subtitle, .feature-item, .features-visual, " +
-      ".values-section h2, .values-section .section-subtitle, .value-item, " +
-      ".footer-branding, .link-column",
+  const elementsToAnimate = document.querySelectorAll(
+    ".features-visual, .feature-item, .values-section h2, .values-section .section-subtitle, .value-item, .footer-branding, .link-column",
   );
-
-  elementsToAnimateOnScroll.forEach((element) => {
-    observer.observe(element);
+  elementsToAnimate.forEach((element) => {
+    scrollObserver.observe(element);
   });
+
+  // --- 3. Modal Functionality ---
+  const openModalButtons = document.querySelectorAll(".js-open-modal");
+  const closeModalButton = document.getElementById("close-modal-button");
+  const modalOverlay = document.getElementById("modal-overlay");
+
+  // NEW: Get modal form and success message elements
+  const modalForm = document.getElementById("modal-form");
+  const modalSuccess = document.getElementById("modal-success");
+
+  const openModal = (event) => {
+    event.preventDefault();
+    // NEW: Ensure form is visible and success is hidden when opening
+    modalForm.classList.remove("is-hidden");
+    modalSuccess.classList.add("is-hidden");
+    modalOverlay.classList.add("visible");
+  };
+
+  const closeModal = () => {
+    modalOverlay.classList.remove("visible");
+  };
+
+  // Attach event listeners
+  openModalButtons.forEach((button) => {
+    button.addEventListener("click", openModal);
+  });
+
+  if (closeModalButton && modalOverlay) {
+    closeModalButton.addEventListener("click", closeModal);
+    modalOverlay.addEventListener("click", (event) => {
+      if (event.target === modalOverlay) closeModal();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && modalOverlay.classList.contains("visible"))
+        closeModal();
+    });
+  }
+
+  // NEW: Handle form submission
+  if (modalForm) {
+    modalForm.addEventListener("submit", (event) => {
+      event.preventDefault(); // Stop the form from reloading the page
+      modalForm.classList.add("is-hidden");
+      modalSuccess.classList.remove("is-hidden");
+    });
+  }
 });

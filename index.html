@@ -22,18 +22,18 @@
                         <li><a href="#values">Our Philosophy</a></li>
                         <li><a href="#about">About</a></li>
                     </ul>
-                    <a href="#" class="nav-button">Get Early Access</a>
+                    <a href="#" class="nav-button js-open-modal"
+                        >Get Early Access</a
+                    >
                 </nav>
             </div>
         </header>
 
         <main>
-            <!-- HERO SECTION (No Changes Here) -->
             <section class="hero">
                 <div class="container hero-content">
                     <h1 class="hero-animate">
-                        A space to find
-                        <br />
+                        A space to find <br />
                         your <span class="accent-color">balance</span>
                     </h1>
                     <p class="subtitle hero-animate">
@@ -42,7 +42,7 @@
                         resilience, find focus, and prioritize your well-being.
                     </p>
                     <div class="hero-buttons hero-animate">
-                        <a href="#" class="cta-button"
+                        <a href="#" class="cta-button js-open-modal"
                             >Join the Waitlist &rarr;</a
                         >
                         <a href="#" class="secondary-button"
@@ -50,7 +50,6 @@
                         >
                     </div>
                 </div>
-
                 <div class="hero-preview-bar-wrapper hero-animate">
                     <div class="hero-preview-bar">
                         <div class="app-info">
@@ -59,7 +58,7 @@
                         </div>
                         <div class="bar-links">
                             <a href="#">&#x2753; FAQs</a>
-                            <a href="#" class="download-link"
+                            <a href="#" class="download-link js-open-modal"
                                 >Get App Updates</a
                             >
                         </div>
@@ -67,7 +66,6 @@
                 </div>
             </section>
 
-            <!-- UPDATED FEATURES SECTION -->
             <section id="features" class="features-section">
                 <div class="container">
                     <h2>Wellness, personalized for you.</h2>
@@ -76,18 +74,15 @@
                         another distraction. Access powerful features that help
                         you understand your patterns and build healthier habits.
                     </p>
-
-                    <!-- Visual element is now first and centered -->
                     <div class="features-visual">
                         <div class="visual-card">
-                            <span
-                                >A visual representation of the MindBalance app
-                                interface</span
-                            >
+                            <!-- REAL IMAGE INSTEAD OF PLACEHOLDER -->
+                            <img
+                                src="https://picsum.photos/seed/mindbalance/800/600"
+                                alt="Calm and abstract representation of the MindBalance interface"
+                            />
                         </div>
                     </div>
-
-                    <!-- Feature descriptions are now in a single-column list -->
                     <div class="features-list">
                         <div class="feature-item">
                             <h3>Daily Check-ins</h3>
@@ -117,7 +112,6 @@
                 </div>
             </section>
 
-            <!-- VALUES SECTION (No Changes Here) -->
             <section id="values" class="values-section">
                 <div class="container">
                     <h2>Our Philosophy</h2>
@@ -128,23 +122,61 @@
                     </p>
                     <div class="values-grid">
                         <div class="value-item">
-                            <span class="icon">&#x2713;</span> Proactive, Not
-                            Reactive
+                            <!-- REAL SVG ICON -->
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.5"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-3.75-2.25M21 12l-3.75 2.25"
+                                />
+                            </svg>
+                            Proactive, Not Reactive
                         </div>
                         <div class="value-item">
-                            <span class="icon">&#x2713;</span> Absolutely
-                            Private
+                            <!-- REAL SVG ICON -->
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.5"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.286zm0 13.036h.008v.008h-.008v-.008z"
+                                />
+                            </svg>
+                            Absolutely Private
                         </div>
                         <div class="value-item">
-                            <span class="icon">&#x2713;</span> Beautifully
-                            Simple by Design
+                            <!-- REAL SVG ICON -->
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.5"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.898 20.573L16.5 21.75l-.398-1.177a3.375 3.375 0 00-2.455-2.456L12.75 18l1.177-.398a3.375 3.375 0 002.455-2.456L16.5 14.25l.398 1.177a3.375 3.375 0 002.456 2.456l1.177.398-1.177.398a3.375 3.375 0 00-2.456 2.456z"
+                                />
+                            </svg>
+                            Beautifully Simple by Design
                         </div>
                     </div>
                 </div>
             </section>
         </main>
 
-        <!-- FOOTER (No Changes Here) -->
         <footer class="site-footer" id="about">
             <div class="container footer-content">
                 <div class="footer-branding">
@@ -153,7 +185,9 @@
                         A proactive mental wellness companion for students. Find
                         your focus, build resilience, and thrive.
                     </p>
-                    <a href="#" class="cta-button">Get Early Access &rarr;</a>
+                    <a href="#" class="cta-button js-open-modal"
+                        >Get Early Access &rarr;</a
+                    >
                 </div>
                 <div class="footer-links">
                     <div class="link-column">
@@ -186,6 +220,37 @@
                 <p>Made with &#x2764; by the MindBalance Team</p>
             </div>
         </footer>
+
+        <!-- MODAL HTML -->
+        <div class="modal-overlay" id="modal-overlay">
+            <div class="modal" id="modal">
+                <button class="modal-close-button" id="close-modal-button">
+                    &times;
+                </button>
+                <div class="modal-content">
+                    <form class="modal-form" id="modal-form">
+                        <h3>Join the MindBalance Waitlist</h3>
+                        <p>
+                            Be the first to know when the app is available. Get
+                            exclusive updates and early access.
+                        </p>
+                        <input
+                            type="email"
+                            placeholder="Enter your email address"
+                            required
+                        />
+                        <button type="submit" class="cta-button">
+                            Notify Me
+                        </button>
+                    </form>
+                    <!-- SUCCESS MESSAGE (HIDDEN BY DEFAULT) -->
+                    <div class="modal-success is-hidden" id="modal-success">
+                        <h3>Thank You!</h3>
+                        <p>You're on the list. We'll be in touch soon.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <script src="script.js"></script>
     </body>
