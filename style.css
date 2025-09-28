@@ -18,10 +18,10 @@ Inspired by Zen Browser's light, fluid, and elegant design.
         "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
         sans-serif;
 
-    --border-radius-lg: 16px; /* For large containers */
-    --border-radius-md: 10px; /* For cards and buttons */
+    --border-radius-lg: 16px;
+    --border-radius-md: 10px;
     --transition-speed: 0.4s;
-    --easing: cubic-bezier(0.16, 1, 0.3, 1); /* A smooth, high-quality ease */
+    --easing: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 * {
@@ -29,11 +29,9 @@ Inspired by Zen Browser's light, fluid, and elegant design.
     margin: 0;
     padding: 0;
 }
-
 html {
     scroll-behavior: smooth;
 }
-
 body {
     font-family: var(--font-body);
     background-color: var(--background-color);
@@ -42,7 +40,6 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
 .container {
     max-width: 1240px;
     margin: 0 auto;
@@ -59,26 +56,22 @@ h4 {
     margin-bottom: 1rem;
     font-weight: 600;
 }
-
 h1 {
     font-size: 5.5rem;
     letter-spacing: -2px;
 }
-
 h2 {
     font-size: 3.5rem;
     text-align: center;
     margin-bottom: 1.5rem;
 }
-
 p.section-subtitle {
     font-size: 1.1rem;
     max-width: 600px;
-    margin: 0 auto 5rem auto; /* ADJUSTED: Increased bottom margin for more space after subtitle */
+    margin: 0 auto 4rem auto;
     text-align: center;
     color: var(--text-secondary-color);
 }
-
 .accent-color {
     color: var(--accent-color);
     font-style: italic;
@@ -89,38 +82,32 @@ p.section-subtitle {
     padding: 25px 0;
     border-bottom: 1px solid var(--border-color);
 }
-
 .site-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
 .logo {
     font-size: 1.75rem;
     font-family: var(--font-heading);
     color: var(--text-color);
     text-decoration: none;
 }
-
 .nav-links {
     list-style: none;
     display: flex;
     align-items: center;
     gap: 35px;
 }
-
 .nav-links a {
     color: var(--text-secondary-color);
     font-weight: 500;
     text-decoration: none;
     transition: color 0.3s ease;
 }
-
 .nav-links a:hover {
     color: var(--text-color);
 }
-
 .nav-button {
     background-color: var(--text-color);
     color: #fff;
@@ -140,23 +127,20 @@ p.section-subtitle {
 /* --- 4. Hero Section --- */
 .hero {
     text-align: center;
-    padding: 140px 0 220px 0; /* ADJUSTED: Increased vertical padding for more impact */
+    padding: 140px 0 200px 0;
     position: relative;
 }
-
 .hero-content {
     max-width: 900px;
     margin: 0 auto;
 }
-
 .hero .subtitle {
     font-size: 1.25rem;
     line-height: 1.6;
     max-width: 650px;
-    margin: 1rem auto 3rem auto; /* ADJUSTED: Added top margin and increased bottom margin */
+    margin: 1rem auto 3rem auto;
     color: var(--text-secondary-color);
 }
-
 .hero-buttons {
     display: flex;
     justify-content: center;
@@ -164,7 +148,6 @@ p.section-subtitle {
     gap: 15px;
     flex-wrap: wrap;
 }
-
 .cta-button,
 .secondary-button {
     display: inline-block;
@@ -175,7 +158,6 @@ p.section-subtitle {
     transition: all 0.3s ease;
     border: 1px solid transparent;
 }
-
 .cta-button {
     background: var(--text-color);
     color: var(--background-color);
@@ -185,7 +167,6 @@ p.section-subtitle {
     transform: translateY(-3px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
-
 .secondary-button {
     background: rgba(0, 0, 0, 0.05);
     color: var(--text-color);
@@ -197,10 +178,9 @@ p.section-subtitle {
     transform: translateY(-3px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
-
 .hero-preview-bar-wrapper {
     position: absolute;
-    bottom: 80px; /* ADJUSTED: Increased distance from the bottom */
+    bottom: 80px;
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
@@ -245,69 +225,69 @@ p.section-subtitle {
     color: var(--text-color);
 }
 
-/* --- 5. Features Section --- */
+/* --- 5. REBUILT Features Section --- */
 .features-section {
-    padding: 140px 0; /* ADJUSTED: Increased vertical padding */
+    padding: 120px 0; /* A balanced vertical space */
     background: var(--surface-color);
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
 }
-.features-content {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    align-items: flex-start;
-    gap: 120px; /* ADJUSTED: Increased gap between text and visual */
-}
-.features-text h2 {
-    text-align: left;
-}
-.features-text .section-subtitle {
-    text-align: left;
-    margin: 0 0 3.5rem 0; /* ADJUSTED: Increased bottom margin */
-}
-.feature-item {
-    margin-bottom: 3rem; /* ADJUSTED: Increased margin between feature items */
-}
-.feature-item h3 {
-    font-size: 1.5rem;
+.features-visual {
+    margin-bottom: 5rem; /* Space between the visual and the text list */
 }
 .features-visual .visual-card {
     background: var(--background-color);
-    border-radius: var(--border-radius-lg);
-    border: 1px solid var(--border-color);
-    padding: 20px;
-    box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.15);
-}
-.features-visual img {
-    width: 100%;
-    display: block;
     border-radius: var(--border-radius-md);
+    border: 1px solid var(--border-color);
+    padding: 20px 30px;
+    box-shadow: 0 10px 40px -15px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Controls the width of the visual element */
+    margin: 0 auto; /* Centers the element */
+    text-align: center;
+    color: var(--text-secondary-color);
+}
+.features-list {
+    max-width: 650px; /* Controls the width of the text list */
+    margin: 0 auto; /* Centers the list */
+}
+.feature-item {
+    margin-bottom: 3.5rem; /* Vertical space between each feature */
+}
+.feature-item:last-child {
+    margin-bottom: 0; /* Removes margin from the last item */
+}
+.feature-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem; /* Tighter space between heading and paragraph */
+}
+.feature-item p {
+    color: var(--text-secondary-color);
 }
 
 /* --- 6. Values Section --- */
 .values-section {
-    padding: 140px 0; /* ADJUSTED: Increased vertical padding */
+    padding: 140px 0;
 }
 .values-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px; /* ADJUSTED: Increased gap */
+    gap: 30px;
 }
 .value-item {
     background: var(--surface-color);
-    padding: 25px 30px; /* ADJUSTED: Increased padding */
+    padding: 25px 30px;
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius-md);
     font-weight: 500;
 }
 .value-item .icon {
-    margin-right: 15px; /* ADJUSTED: More space for icon */
+    margin-right: 15px;
     color: var(--accent-color);
 }
 
 /* --- 7. Footer --- */
 .site-footer {
-    padding: 100px 0 0 0; /* ADJUSTED: Increased top padding */
+    padding: 100px 0 0 0;
     background: var(--footer-background);
     color: #a0a0a0;
 }
@@ -315,7 +295,7 @@ p.section-subtitle {
     display: grid;
     grid-template-columns: 1.5fr 2fr;
     gap: 80px;
-    padding-bottom: 80px; /* ADJUSTED: Increased bottom padding */
+    padding-bottom: 80px;
 }
 .footer-branding h3 {
     font-size: 2rem;
@@ -352,15 +332,15 @@ p.section-subtitle {
     color: #fff;
 }
 .footer-bottom {
-    padding: 40px 0; /* ADJUSTED: Increased padding */
+    padding: 40px 0;
     border-top: 1px solid #333;
     text-align: center;
 }
 
 /* --- 8. Animation System --- */
 .hero-animate,
-.feature-item,
 .features-visual,
+.feature-item,
 .value-item,
 .footer-branding,
 .link-column,
@@ -378,22 +358,9 @@ p.section-subtitle {
     opacity: 1;
     transform: translateY(0);
 }
-.feature-item:nth-of-type(1) {
-    transition-delay: 0.1s;
-}
-.feature-item:nth-of-type(2) {
-    transition-delay: 0.2s;
-}
-.feature-item:nth-of-type(3) {
-    transition-delay: 0.3s;
-}
 
 /* --- 9. Responsive --- */
 @media (max-width: 1024px) {
-    .features-content {
-        grid-template-columns: 1fr;
-        gap: 80px; /* ADJUSTED */
-    }
     .footer-content {
         grid-template-columns: 1fr;
         gap: 60px;
@@ -423,7 +390,6 @@ p.section-subtitle {
         flex-direction: column;
         gap: 15px;
     }
-    /* ADJUSTED: Reduced padding on mobile for better spacing */
     .hero {
         padding: 100px 0 180px 0;
     }
